@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { NavOption } from "./types/types";
 import MainHeader from "./components/header";
-
+import MainFooter from "./components/footer";
+import styles from "./RootLayout.module.css";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,16 +15,35 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const options:NavOption[] = [
-    { name: "Inicio", url: "/"},
-    { name: "Explorar", url: "explorar"},
-    { name: "Perfil", url: "perfil"}
-  ]
+  const appTitle = "PulseStream";
+
+  const headerOptions: NavOption[] = [
+    { name: "Inicio", url: "/" },
+    { name: "Explorar", url: "/explorar" },
+    { name: "Perfil", url: "/perfil" },
+  ];
+
+  const footerOptions: NavOption[] = [
+    { name: "Términos", url: "/terms" },
+    { name: "Privacidad", url: "/privacy" },
+    { name: "Cookies", url: "/cookies" },
+    { name: "Accesibilidad", url: "/accessibility" },
+    { name: "Cookies", url: "/cookies" },
+  ];
   return (
     <html lang="en">
       <body>
-        <MainHeader options={options}></MainHeader>
-        {children}
+        <div className={styles.container}>
+          <aside className={styles.sidebar}>
+            <MainHeader options={headerOptions} />
+          </aside>
+
+          <main>{children}</main>
+
+          <aside className={styles.sidebar}>
+            <MainFooter footerItems={footerOptions} appTitle={appTitle} />
+          </aside>
+        </div>
       </body>
     </html>
   );
