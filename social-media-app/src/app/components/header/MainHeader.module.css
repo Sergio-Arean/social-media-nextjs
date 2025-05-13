@@ -10,3 +10,8 @@
     text-decoration: none;
     color: inherit;
 }
+
+.btnWrapper {
+    display: flex;
+    justify-content: center;
+}
