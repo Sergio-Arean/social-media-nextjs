@@ -5,7 +5,11 @@
     --spacing-sm: 8px;
     --spacing-md: 16px;
     --spacing-lg: 24px;
-    --border-radius: 8px;
+    --default-border-radius: 8px;
+    --main-color:#8B5CF6;
+    --default-hover-background:#F1F0FB;
+    --button-font-color: #ffffff;
+    --default-background: #ffffff;
   }
 
 

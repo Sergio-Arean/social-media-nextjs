@@ -5,5 +5,5 @@ type TitleLogoProps = {
     // href:string;
 }
 export default function TitleLogo({title}:TitleLogoProps){
-    return <span className={styles.mainTitle}>{title}</span>
+    return <span className={styles.mainTitle}><h1>{title}</h1></span>
 }

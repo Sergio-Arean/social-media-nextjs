@@ -1,2 +1,6 @@
 .mainTitle {
+    color: var(--main-color);
+    background-color: var(--default-background);
+    font-weight: 800;
+    padding:2rem;
 }

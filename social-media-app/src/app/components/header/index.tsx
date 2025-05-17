@@ -12,11 +12,11 @@ export default function MainHeader({ options }: HeaderProps) {
   return (
     <header className={styles.container}>
       <TitleLogo title="PulseStream"/>
-      <nav>
+      <nav className={styles.navContainer}>
         <ul>
           {options.map((option) => {
             return (
-              <li key={option.url}>
+              <li className={styles.navItem}  key={option.url}>
                 <Link className={styles.link} href={option.url}>
                   {option.name}
                 </Link>
